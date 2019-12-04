@@ -1,0 +1,2 @@
+class Postblog < ApplicationRecord
+end

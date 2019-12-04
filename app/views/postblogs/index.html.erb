@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Postblogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postblogs.each do |postblog| %>
+      <tr>
+        <td><%= postblog.name %></td>
+        <td><%= postblog.text %></td>
+        <td><%= link_to 'Show', postblog %></td>
+        <td><%= link_to 'Edit', edit_postblog_path(postblog) %></td>
+        <td><%= link_to 'Destroy', postblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+   
+    <% end %>
+  </tbody>
+</table>
+  <%= pagy_nav(@pagy).html_safe %>  
+<br>
+
+<%= link_to 'New Postblog', new_postblog_path %>
+ 
